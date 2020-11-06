@@ -4,7 +4,7 @@ const Choice = require('inquirer/lib/objects/choice');
 
 const Choices = require('inquirer/lib/objects/choices');
 
-
+const{ base } = require('./generatehtml');
 
 function getUserInput(){
    return inquirer.prompt([
@@ -33,9 +33,10 @@ function getUserInput(){
     ])
 }
 
+
 async function main() {
     const {username, color} = await getUserInput();
-    console.log(username, color);
+    base(username, color);
 }
 
 main(); 
